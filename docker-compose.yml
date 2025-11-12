@@ -2,10 +2,10 @@ version: "3.9"
 
 services:
   backend:
-    build: ./backend        # points to backend folder
+    build: ./backend
     container_name: backend
     ports:
-      - "4000:4000"
+      - "5000:4000"   # now access backend at localhost:5000
     env_file:
       - ./backend/.env
     depends_on:
@@ -19,7 +19,7 @@ services:
     image: mongo:latest
     container_name: mongo
     ports:
-      - "27017:27017"
+      - "27018:27017"   # now MongoDB accessible at localhost:27018
     volumes:
       - mongo-data:/data/db
     networks:
